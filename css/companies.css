@@ -1,0 +1,99 @@
+body {
+  overflow-y: scroll;
+}
+.grid {
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  align-items: stretch;
+}
+
+.grid > article {
+  border: 3px solid #4b0082;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.grid > article:hover {
+  transition: transform 0.1s ease-out;
+  transform: translateY(-5px);
+}
+
+.grid > article img {
+  width: 80%;
+  object-fit: cover !important;
+  object-position: center !important;
+  padding: 20px;
+}
+.action {
+  width: 25% !important;
+}
+
+.text {
+  border-top: 3px solid #4b0082;
+  padding: 0 20px 20px;
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 0.9rem;
+}
+
+.text p {
+  overflow-y: auto;
+  font-weight: bold;
+  color: #000 !important;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #7840a1 0%, #5d198e 66%, #4b0082 100%);
+  border-radius: 10px;
+}
+
+.text p::-webkit-scrollbar {
+  width: 0px;
+}
+
+.text > h3 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-style: normal !important;
+
+  text-transform: uppercase;
+}
+
+.text > button,
+#apply {
+  background: linear-gradient(to right, #7840a1 0%, #5d198e 66%, #4b0082 100%);
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  font-weight: 600;
+  text-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 50px;
+  }
+
+  .grid > article {
+    text-align: center;
+  }
+}
